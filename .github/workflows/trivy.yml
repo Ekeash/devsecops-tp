@@ -1,0 +1,25 @@
+name: Trivy
+on: [push, pull_request]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t devsecops-tp:${{ github.sha }} .
+      - name: Trivy (rapport, HIGH+CRITICAL)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: devsecops-tp:${{ github.sha }}
+          severity: HIGH,CRITICAL
+          exit-code: '0'
+          format: table
+      - name: Trivy (echec si CRITICAL)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: devsecops-tp:${{ github.sha }}
+          severity: CRITICAL
+          exit-code: '1'
