@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Quiz Kahoot - Sensibilisation securite web</title>
+<style>
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #222; margin: 24px; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .sub { color: #555; margin-bottom: 20px; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  th, td { border: 1px solid #bbb; padding: 6px 8px; vertical-align: top; text-align: left; }
+  th { background: #2f5496; color: white; font-size: 12px; }
+  td { font-size: 12px; }
+  .correct { background: #e8f5e9; font-weight: bold; }
+  .qnum { width: 28px; text-align: center; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>Quiz interactif - Sensibilisation aux vulnerabilites web</h1>
+<div class="sub">A importer dans Kahoot via "Creer un kahoot &gt; Importer une feuille de calcul" (fichier source : quiz-kahoot.xlsx). La reponse correcte est surlignee en vert.</div>
+<table>
+<tr><th class="qnum">#</th><th>Question</th><th>Reponse 1</th><th>Reponse 2</th><th>Reponse 3</th><th>Reponse 4</th><th>Temps (s)</th></tr>
+<tr><td class="qnum">1</td><td>Un formulaire de connexion accepte l'entrée `admin' --` et vous connecte sans mot de passe. De quelle vulnérabilité s'agit-il ?</td><td>Cross-Site Scripting (XSS)</td><td class="correct">Injection SQL</td><td>Command Injection</td><td>CSRF</td><td>20</td></tr>
+<tr><td class="qnum">2</td><td>Quelle est la meilleure protection contre l'injection SQL ?</td><td>Filtrer les apostrophes à la main</td><td>Utiliser un pare-feu applicatif</td><td class="correct">Utiliser des requêtes paramétrées (prepared statements)</td><td>Chiffrer la base de données</td><td>20</td></tr>
+<tr><td class="qnum">3</td><td>Un site affiche directement dans la page le contenu du paramètre `?name=` sans l'échapper. Quel risque cela introduit-il ?</td><td>Déni de service</td><td class="correct">Cross-Site Scripting (XSS) réfléchi</td><td>Injection SQL</td><td>Path Traversal</td><td>20</td></tr>
+<tr><td class="qnum">4</td><td>Quel caractère shell permet d'enchaîner deux commandes dans une injection de commande ?</td><td>`#`</td><td>`%`</td><td class="correct">`;`</td><td>`@`</td><td>20</td></tr>
+<tr><td class="qnum">5</td><td>Pourquoi est-il dangereux de permettre l'upload d'un fichier sans vérifier son contenu ?</td><td>Cela ralentit uniquement le serveur</td><td class="correct">Le fichier peut contenir du code exécuté par le serveur</td><td>Cela ne pose aucun risque si le fichier est petit</td><td>Cela sature uniquement la bande passante</td><td>20</td></tr>
+<tr><td class="qnum">6</td><td>Que signifie l'acronyme SAST ?</td><td>Secure Access Security Token</td><td class="correct">Static Application Security Testing</td><td>System Authentication Security Test</td><td>Software Access Scan Tool</td><td>20</td></tr>
+<tr><td class="qnum">7</td><td>Dans ce TP, quel outil a été utilisé pour l'analyse statique du code (SAST) ?</td><td>Trivy</td><td>Dependabot</td><td class="correct">CodeQL</td><td>CTFd</td><td>20</td></tr>
+<tr><td class="qnum">8</td><td>Quel outil a scanné l'image Docker pour y trouver des vulnérabilités connues ?</td><td>CodeQL</td><td class="correct">Trivy</td><td>Dependabot</td><td>GitHub Actions</td><td>20</td></tr>
+<tr><td class="qnum">9</td><td>Quel outil ouvre automatiquement des pull requests pour mettre à jour des dépendances vulnérables ?</td><td>Trivy</td><td>CodeQL</td><td class="correct">Dependabot</td><td>CTFd</td><td>20</td></tr>
+<tr><td class="qnum">10</td><td>Dans une pipeline CI/CD, pourquoi est-il utile de faire échouer le build sur une vulnérabilité critique ?</td><td>Pour ralentir les développeurs</td><td class="correct">Pour empêcher le déploiement d'une image ou d'un code dangereux</td><td>Pour économiser des ressources serveur</td><td>Ce n'est jamais utile</td><td>20</td></tr>
+<tr><td class="qnum">11</td><td>Qu'est-ce que le principe DevSecOps ?</td><td>Confier toute la sécurité à une équipe externe</td><td>Faire la sécurité uniquement avant la mise en production</td><td class="correct">Intégrer la sécurité en continu, tout au long du cycle de développement</td><td>Un outil spécifique de scan de vulnérabilités</td><td>20</td></tr>
+<tr><td class="qnum">12</td><td>Un mot de passe ou une clé d'API écrite en dur dans le code source est un risque parce que :</td><td>Cela ralentit l'exécution du programme</td><td class="correct">Toute personne ayant accès au code (dépôt, historique git...) peut la récupérer</td><td>Cela empêche les tests automatiques</td><td>Ce n'est pas un risque si le dépôt est privé</td><td>20</td></tr>
+<tr><td class="qnum">13</td><td>Que recommande-t-on de faire face à une commande système construite avec une entrée utilisateur ?</td><td>Échapper uniquement les espaces</td><td>Utiliser `shell=True` pour plus de flexibilité</td><td class="correct">Appeler le programme avec des arguments séparés, sans passer par un shell</td><td>Convertir l'entrée en majuscules</td><td>20</td></tr>
+<tr><td class="qnum">14</td><td>Pourquoi est-il risqué d'utiliser une image Docker de base très ancienne (ex : `node:14`) ?</td><td>Elle consomme plus de mémoire</td><td class="correct">Elle contient des vulnérabilités connues, non corrigées, dans l'OS et les paquets systèmes</td><td>Elle est incompatible avec Docker Compose</td><td>Elle ne peut pas être publiée sur un registre</td><td>20</td></tr>
+<tr><td class="qnum">15</td><td>Dans un mini CTF, à quoi correspond le "flag" ?</td><td>Un drapeau décoratif affiché sur la plateforme</td><td class="correct">Une chaîne secrète prouvant qu'un challenge a été résolu avec succès</td><td>Le nom du joueur gagnant</td><td>Un type de vulnérabilité</td><td>20</td></tr>
+<tr><td class="qnum">16</td><td>Quelle est la différence principale entre SAST et DAST ?</td><td>Aucune, ce sont des synonymes</td><td class="correct">SAST analyse le code source sans l'exécuter ; DAST teste l'application en fonctionnement</td><td>SAST est plus rapide mais moins précis</td><td>DAST ne s'applique qu'aux applications mobiles</td><td>20</td></tr>
+<tr><td class="qnum">17</td><td>Un correctif Dependabot propose de passer d'une version majeure à une autre (ex : Express 4 → 5). Que faut-il faire avant de fusionner ?</td><td>Fusionner immédiatement, Dependabot ne se trompe jamais</td><td class="correct">Vérifier la compatibilité et faire tourner les tests avant de fusionner</td><td>Ignorer la pull request</td><td>Supprimer la dépendance</td><td>20</td></tr>
+</table>
+</body>
+</html>
