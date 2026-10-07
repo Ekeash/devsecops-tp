@@ -1,8 +1,8 @@
-# Image de base ancienne volontairement (pour que Trivy detecte des CVE)
-FROM node:14
+# Image corrigee : base recente et legere (au lieu de node:14).
+FROM node:22-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm install --omit=dev
 COPY . .
 EXPOSE 3000
 CMD ["node", "app.js"]

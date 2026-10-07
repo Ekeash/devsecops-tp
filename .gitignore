@@ -1,2 +1,13 @@
 node_modules
 uploads
+
+# CTF local (ne pas commiter)
+ctf/CREDENTIALS_LOCAL.md
+ctf/challenge2-upload/plugins/*
+!ctf/challenge2-upload/plugins/.gitkeep
+ctf/challenge2-upload/uploads/*
+!ctf/challenge2-upload/uploads/.gitkeep
+
+# CTFd est un projet tiers clone separement, pas versionne dans ce depot
+# (voir ctf/docs/ctfd-deploiement.md pour la procedure de clonage)
+ctf/ctfd/

@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Mini appli volontairement vulnerable pour le TP DevSecOps",
   "main": "app.js",
-  "scripts": { "start": "node app.js", "test": "node -e \"console.log('ok')\"" },
+  "scripts": {
+    "start": "node app.js",
+    "test": "node -e \"console.log('ok')\""
+  },
   "dependencies": {
-    "express": "4.16.0",
-    "lodash": "4.17.15",
-    "minimist": "1.2.0",
-    "multer": "1.4.4",
-    "sqlite3": "^5.1.7"
+    "express": "^4.21.2",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "multer": "^2.0.0",
+    "sqlite3": "^6.0.1"
   }
 }

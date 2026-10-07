@@ -1,0 +1,27 @@
+services:
+  challenge1-sqli:
+    build: ./challenge1-sqli
+    container_name: ctf-challenge1-sqli
+    ports:
+      - "5001:5000"
+    environment:
+      - FLAG=FLAG{sQl1_1nj3ct10n_byp4ss_l0g1n}
+    restart: unless-stopped
+
+  challenge2-upload:
+    build: ./challenge2-upload
+    container_name: ctf-challenge2-upload
+    ports:
+      - "5002:5000"
+    environment:
+      - FLAG=FLAG{uns4f3_upl0ad_c0de_exec}
+    restart: unless-stopped
+
+  challenge3-cmdinj:
+    build: ./challenge3-cmdinj
+    container_name: ctf-challenge3-cmdinj
+    ports:
+      - "5003:5000"
+    environment:
+      - FLAG=FLAG{c0mm4nd_1nj3ct10n_v1a_p1ng}
+    restart: unless-stopped

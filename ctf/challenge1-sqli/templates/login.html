@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Intranet - Connexion</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f8; display:flex; justify-content:center; margin-top:80px; }
+    .box { background:white; padding:30px 40px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.15); width:320px; }
+    h1 { font-size:20px; margin-bottom:20px; }
+    input { width:100%; padding:8px; margin-bottom:12px; box-sizing:border-box; }
+    button { width:100%; padding:10px; background:#2f5496; color:white; border:none; border-radius:4px; cursor:pointer; }
+    .error { color:#b00020; font-size:14px; margin-bottom:10px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Intranet - Espace reserve</h1>
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    <form method="post" action="/login">
+      <input type="text" name="username" placeholder="Identifiant" autocomplete="off">
+      <input type="password" name="password" placeholder="Mot de passe" autocomplete="off">
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+</body>
+</html>
