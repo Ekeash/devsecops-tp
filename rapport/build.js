@@ -25,7 +25,7 @@ function img(file, w, h, caption) {
 
 const children = [
   new Paragraph({ children: [new TextRun({ text: 'TP - Pratiques proactives de securite web', bold: true, size: 32 })] }),
-  new Paragraph({ spacing: { after: 60 }, children: [new TextRun('Nom(s) : [a completer]')] }),
+  new Paragraph({ spacing: { after: 60 }, children: [new TextRun('Nom(s) : Abisheake Kunasekaran')] }),
   new Paragraph({ spacing: { after: 60 }, children: [new TextRun('Depot GitHub : https://github.com/Ekeash/devsecops-tp')] }),
   new Paragraph({ spacing: { after: 300 }, children: [new TextRun('Octobre 2026')] }),
 
@@ -78,7 +78,8 @@ const children = [
   ...img('11_ctfd_flag_correct.jpg', 380, 285, 'Flag soumis et valide par CTFd.'),
 
   h2('Quiz'),
-  p('On a prepare 17 questions sur les vulnerabilites web et les outils vus dans ce TP (SQLi, XSS, injection de commande, upload, CodeQL, Dependabot, Trivy, DevSecOps...). Le fichier quiz-kahoot.xlsx dans ctf/docs/ est pret a etre importe directement dans Kahoot.'),
+  p('On a prepare 17 questions sur les vulnerabilites web et les outils vus dans ce TP (SQLi, XSS, injection de commande, upload, CodeQL, Dependabot, Trivy, DevSecOps...). Le quiz est en ligne sur Kahoot :'),
+  p('https://create.kahoot.it/share/quizz/15b795de-527e-4f33-b931-352d39cace20'),
 
   h1('6. Correction des failles'),
   p('On a ensuite corrige les failles trouvees plus haut :'),
@@ -98,6 +99,7 @@ const children = [
   bullet('CodeQL : https://github.com/github/codeql-action'),
   bullet('Trivy Action : https://github.com/aquasecurity/trivy-action'),
   bullet('CTFd : https://github.com/CTFd/CTFd'),
+  bullet('Quiz Kahoot : https://create.kahoot.it/share/quizz/15b795de-527e-4f33-b931-352d39cace20'),
 ];
 
 const doc = new Document({
