@@ -80,8 +80,16 @@ const children = [
   h2('Quiz'),
   p('On a prepare 17 questions sur les vulnerabilites web et les outils vus dans ce TP (SQLi, XSS, injection de commande, upload, CodeQL, Dependabot, Trivy, DevSecOps...). Le fichier quiz-kahoot.xlsx dans ctf/docs/ est pret a etre importe directement dans Kahoot.'),
 
-  h1('6. Ce qu’il reste a faire'),
-  p('La correction concrete des failles (code + dependances + image Docker) n’est pas encore faite, elle viendra dans une prochaine version du rapport.'),
+  h1('6. Correction des failles'),
+  p('On a ensuite corrige les failles trouvees plus haut :'),
+  bullet('Injection SQL : la requete sur /user utilise maintenant une requete parametree (plus de concatenation).'),
+  bullet('Injection de commande : /ping utilise execFile (pas de shell) et valide l’adresse avant de l’utiliser.'),
+  bullet('XSS : les parametres affiches dans la page sont echappes avant insertion dans le HTML.'),
+  bullet('Upload : extension limitee a une liste blanche (images, pdf, txt) et taille max 2 Mo.'),
+  bullet('Secret en dur : la cle est maintenant lue depuis une variable d’environnement.'),
+  bullet('Dependances : express, lodash, minimist, multer et sqlite3 mis a jour (npm audit : 0 vulnerabilite, contre 21 alertes avant).'),
+  bullet('Image Docker : node:14 remplace par node:22-alpine.'),
+  p('Apres avoir pousse ces corrections, les pipelines GitHub Actions sont repasses au vert : CodeQL ne trouve plus que 2 alertes mineures ("missing rate limiting", pas corrigees, jugees moins prioritaires), et Trivy passe de 25 vulnerabilites critiques a 0 critique (il reste 11 HIGH, lies aux paquets systeme d’Alpine, acceptable pour ce TP). Le pipeline Trivy, qui echouait avant, passe maintenant.'),
 
   new Paragraph({ children: [new PageBreak()] }),
   h1('Annexe - liens utiles'),
