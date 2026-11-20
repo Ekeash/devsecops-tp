@@ -1,5 +1,5 @@
 # Image corrigee : base recente et legere (au lieu de node:14).
-FROM node:22-alpine
+FROM node:26-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev
